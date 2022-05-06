@@ -18,7 +18,7 @@ void testBattery()
     assert(n.checkBatteryIsOk(45, 81, 0.5) == false);
     assert(n.checkBatteryIsOk(45, 50, 0.5) == true);
 
-    // SOC test
+    // Range test
     assert(n.checkBatteryIsOk(45, 50, 0.8) == false);
     assert(n.checkBatteryIsOk(45, 50, 0.9) == false);
     assert(n.checkBatteryIsOk(45, 50, 0.7) == true);
