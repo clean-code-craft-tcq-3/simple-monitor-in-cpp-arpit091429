@@ -1,6 +1,7 @@
 #include "Battery.h"
 class NewBatteryState : public Battery
 {
+/*
     bool checkTempRange(float temperature)
     {
         if (temperature < 0 || temperature > 45)
@@ -30,10 +31,20 @@ class NewBatteryState : public Battery
         }
         else
             return true;
+    }*/
+        bool isValueInRange(float temperature, float soc, float chargeRate)
+    {
+        if ((temperature < 0 || temperature > 45) || (soc < 20 || soc > 80) || (chargeRate > 0.8))
+        {
+            cout << "out of range!\n";
+            return false;
+        }
+        else
+            return true;
     }
       public:
     bool checkBatteryIsOk(float temperature, float soc, float chargeRate)
     {
-        return (checkTempRange(temperature) && checkSocRange(soc) && checkChargeRateRange(chargeRate));
+        return (isValueInRange(temperature,soc,chargeRate));
     }
 };
