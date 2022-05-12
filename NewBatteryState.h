@@ -32,8 +32,8 @@ class NewBatteryState : public Battery
             return true;
     }
       public:
-    bool checkBatteryIsOk(float t, float s, float c)
+    bool checkBatteryIsOk(float temperature, float soc, float chargeRate)
     {
-        return (checkTempRange(t) && checkSocRange(s) && checkChargeRateRange(c));
+        return (checkTempRange(temperature) && checkSocRange(soc) && checkChargeRateRange(chargeRate));
     }
 };
