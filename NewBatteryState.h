@@ -1,7 +1,6 @@
 #include "Battery.h"
 class NewBatteryState : public Battery
 {
-  public:
     bool checkTempRange(float temperature)
     {
         if (temperature < 0 || temperature > 45)
@@ -32,6 +31,7 @@ class NewBatteryState : public Battery
         else
             return true;
     }
+      public:
     bool checkBatteryIsOk(float t, float s, float c)
     {
         return (checkTempRange(t) && checkSocRange(s) && checkChargeRateRange(c));
